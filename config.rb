@@ -23,22 +23,17 @@ configure :development do
   activate :livereload
 end
 
-###
-# Helpers
-###
+data.lists.each do |list|
+  proxy "/#{list.slug}/index.html",
+        '/awesome_list/template.html',
+        locals: {name: list.name, gh_url: list.url, repo_path: list.repo_path},
+        ignore: true
+end
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_javascript
 end
