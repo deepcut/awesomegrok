@@ -1,0 +1,22 @@
+.awesome_list
+  .header
+    .left
+      h2
+        a href='/' < See all Awesome Lists
+      h2 = name
+      ul
+        li
+          a href=gh_url View on GitHub
+    .right
+      // GitHub buttons: see http://ghbtns.com
+      iframe src="http://ghbtns.com/github-btn.html?user=USER&amp;repo=REPO&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"
+
+  .content-root
+    .menubar
+      .menu.section role='flatdoc-menu'
+    .content role='flatdoc-content'
+
+javascript:
+  Flatdoc.run({
+    fetcher: Flatdoc.github("#{repo_path}")
+  });

@@ -1,0 +1,27 @@
+<!doctype html>
+html
+  head
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta charset="utf-8"
+    meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"
+
+    title = current_page.data.title || "Awesome Grok"
+
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.css" integrity="sha256-7U0xqPj+1AYU4m64hb4pxr8MAnVPfY7+X8mcZxvKuEY=" crossorigin="anonymous"
+
+    // Flatdoc
+    script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'
+    script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'
+
+    // Flatdoc theme
+    link  href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'
+    script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js'
+
+    link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'
+
+    = stylesheet_link_tag :site
+    = javascript_include_tag :all
+
+  body class=page_classes role='flatdoc'
+    = yield

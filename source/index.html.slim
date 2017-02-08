@@ -1,0 +1,16 @@
+---
+title: AwesomeGrok.com
+---
+
+.row
+  h1 Welcome to AwesomeGrok
+  h2 A single place to find all the awesome stuff
+
+hr
+
+.row
+  ul.awesome-lists
+    - data.lists.each do |list|
+      li
+        a href="/#{list.slug}"
+          = list.name
