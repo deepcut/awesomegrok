@@ -18,8 +18,8 @@ task :server do
   sh 'bundle exec middleman'
 end
 
-desc 'Publish to GitHub Pages'
-task :publish do
+desc 'Deploy to GitHub Pages'
+task :deploy do
   sh '########################################'
   sh '# Pushing the latest changes to master #'
   sh '########################################'
@@ -32,11 +32,12 @@ task :publish do
 
   sh 'bundle exec middleman deploy'
 
-  sh '##################################################'
-  sh '# Successfully published to https://thelove.fund #'
-  sh '##################################################'
+  sh '##########################'
+  sh '# Successfully published #'
+  sh '##########################'
 end
 
 task s: :server
 task p: :populate
+task d: :deploy
 
